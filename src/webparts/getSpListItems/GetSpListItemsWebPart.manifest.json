@@ -1,0 +1,27 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
+
+  "id": "0795466b-8dc6-4e6c-b9e1-e38fe9c390c1",
+  "alias": "GetSpListItemsWebPart",
+  "componentType": "WebPart",
+  "version": "*",
+  "manifestVersion": 2,
+  
+  // If true, the component can only be installed on sites where Custom Script is allowed.
+  // Components that allow authors to embed arbitrary script code should set this to true.
+  // https://support.office.com/en-us/article/Turn-scripting-capabilities-on-or-off-1f2c515f-5d7e-448a-9fd7-835da935584f
+  "requiresCustomScript": false,
+
+  "preconfiguredEntries": [{
+    "groupId": "5c03119e-3074-46fd-976b-c60198311f70", // Other
+    "group": { "default": "Other" },
+    "title": { "default": "GetSPListItems" },
+    "description": { "default": "This WebPart will retrieve list items form SharePoint List and display in a table" },
+    "officeFabricIconFontName": "Page",
+    "properties": {
+      "publicContentTypeId": "0x0100B1140C9087A6D842A687A3FC7ACD0BBC01",
+      "invitedContentTypeId": "0x0100B1140C9087A6D842A687A3FC7ACD0BBC02",
+      "confidentialContentTypeId": "0x0100B1140C9087A6D842A687A3FC7ACD0BBC03"
+    }
+  }]
+}
