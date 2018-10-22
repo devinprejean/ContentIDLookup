@@ -15,6 +15,11 @@ export interface IGetSpListItemsWebPartProps {
   invitedContentTypeId: string;
   publicContentTypeId: string;
   confidentialContentTypeId: string;
+  titleSearchField: string;
+  projectLeaderSearchField: string;
+  descriptionSearchField: string;
+  statusSearchField: string;
+  budgetSearchField: string;  
 }
 
 export default class GetSpListItemsWebPart extends BaseClientSideWebPart<IGetSpListItemsWebPartProps> {
@@ -26,6 +31,7 @@ export default class GetSpListItemsWebPart extends BaseClientSideWebPart<IGetSpL
         invitedContentTypeId: this.properties.invitedContentTypeId,
         publicContentTypeId: this.properties.publicContentTypeId,
         confidentialContentTypeId: this.properties.confidentialContentTypeId,
+        projectSearchFieldStrings: [this.properties.titleSearchField, this.properties.projectLeaderSearchField, this.properties.descriptionSearchField, this.properties.statusSearchField, this.properties.budgetSearchField],
         webpartContext: this.context
       }
     );
@@ -60,6 +66,26 @@ export default class GetSpListItemsWebPart extends BaseClientSideWebPart<IGetSpL
                 }),
                 PropertyPaneTextField('confidentialContentTypeId', {
                   label: strings.ConfidentialContentTypeId
+                }),
+              ]
+            },
+            {
+              groupName: "Search Field Names",
+              groupFields: [
+                PropertyPaneTextField('titleSearchField', {
+                  label: "Title/Project Name"
+                }),
+                PropertyPaneTextField('projectLeaderSearchField', {
+                  label: "Project Leader"
+                }),
+                PropertyPaneTextField('descriptionSearchField', {
+                  label: "Description"
+                }),
+                PropertyPaneTextField('statusSearchField', {
+                  label: "Status"
+                }),
+                PropertyPaneTextField('budgetSearchField', {
+                  label: "Budget"
                 }),
               ]
             }

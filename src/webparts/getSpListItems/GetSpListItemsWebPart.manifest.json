@@ -21,7 +21,12 @@
     "properties": {
       "publicContentTypeId": "0x0100B1140C9087A6D842A687A3FC7ACD0BBC01",
       "invitedContentTypeId": "0x0100B1140C9087A6D842A687A3FC7ACD0BBC02",
-      "confidentialContentTypeId": "0x0100B1140C9087A6D842A687A3FC7ACD0BBC03"
+      "confidentialContentTypeId": "0x0100B1140C9087A6D842A687A3FC7ACD0BBC03",
+      "titleSearchField": "Title", 
+      "descriptionSearchField": "Description1OWSTEXT", 
+      "projectLeaderSearchField": "ProjectLeaderOWSUSER", 
+      "statusSearchField": "ProjectStatusOWSCHCS", 
+      "budgetSearchField": "BudgetOWSTEXT"
     }
   }]
 }

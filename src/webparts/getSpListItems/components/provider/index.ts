@@ -8,11 +8,11 @@ export class ProjectItemProvider {
         this.context = context;
     }
 
-    public GetSiteItemsByContentId(contentTypeId: string): Promise<SearchResult[]> {
+    public GetSiteItemsByContentId(contentTypeId: string, selectProperties: string[]): Promise<SearchResult[]> {
         const _searchQuerySettings: SearchQuery = {
             TrimDuplicates: false,
             RowLimit: 500, 
-            SelectProperties:["Title", "Description1OWSTEXT", "ProjectLeaderOWSUSER", "ProjectStatusOWSCHCS", "BudgetOWSTEXT", "ParentLink"]
+            SelectProperties: selectProperties.concat(["ParentLink"])
         };
         
         let q = SearchQueryBuilder(`ContentTypeId:${contentTypeId}*`, _searchQuerySettings).rowLimit(500);

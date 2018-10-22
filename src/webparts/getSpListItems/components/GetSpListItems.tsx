@@ -39,7 +39,7 @@ export class GetSpListItems extends React.Component<GetSpListItemsProps, GetSpLi
 
   private getProjectItems() {
     // Get Public
-    this.provider.GetSiteItemsByContentId(this.props.publicContentTypeId).then((items: Project[]) => {
+    this.provider.GetSiteItemsByContentId(this.props.publicContentTypeId, this.props.projectSearchFieldStrings).then((items: Project[]) => {
       const i: Project[] = [];
       items.map((result: any) => {
         i.push(this.mapResultToProject(result, ProjectType.Public));
@@ -49,7 +49,7 @@ export class GetSpListItems extends React.Component<GetSpListItemsProps, GetSpLi
       });
     });
     // Get Invited
-    this.provider.GetSiteItemsByContentId(this.props.invitedContentTypeId).then((items: Project[]) => {
+    this.provider.GetSiteItemsByContentId(this.props.invitedContentTypeId, this.props.projectSearchFieldStrings).then((items: Project[]) => {
       const i: Project[] = [];
       items.map((result: any) => {
         i.push(this.mapResultToProject(result, ProjectType.Invited));
@@ -59,7 +59,7 @@ export class GetSpListItems extends React.Component<GetSpListItemsProps, GetSpLi
       });
     });
     // Get Confidential
-    this.provider.GetSiteItemsByContentId(this.props.confidentialContentTypeId).then((items: Project[]) => {
+    this.provider.GetSiteItemsByContentId(this.props.confidentialContentTypeId, this.props.projectSearchFieldStrings).then((items: Project[]) => {
       const i: Project[] = [];
       items.map((result: any) => {
         i.push(this.mapResultToProject(result, ProjectType.Confidential));
@@ -92,7 +92,7 @@ export class GetSpListItems extends React.Component<GetSpListItemsProps, GetSpLi
         </table>
         <h2>All Projects</h2>
         <table>
-          <th>Title</th><th>Project Leader</th><th>Description</th><th>Status</th><th>Budget</th>
+          <th>Title</th><th>Project Leader</th><th>Description</th>
           {listItems.length > 0 && listItems.map((item: Project) => {
             if (item.Type !== ProjectType.Confidential)
             return (
@@ -100,8 +100,6 @@ export class GetSpListItems extends React.Component<GetSpListItemsProps, GetSpLi
                 <td><a href={item.ListUrl}>{item.Title}</a></td>
                 <td>{item.ProjectLeader}</td>
                 <td>{item.Description}</td>
-                <td>{item.Status}</td>
-                <td>{item.Budget}</td>
               </tr>
             );
           })}
