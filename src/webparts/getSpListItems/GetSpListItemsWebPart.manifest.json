@@ -1,8 +1,8 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
 
-  "id": "0795466b-8dc6-4e6c-b9e1-e38fe9c390c1",
-  "alias": "GetSpListItemsWebPart",
+  "id": "ea282fcd-fc86-4d8f-b87f-14a64a450808",
+  "alias": "ProjectDashboardWebPart",
   "componentType": "WebPart",
   "version": "*",
   "manifestVersion": 2,
@@ -15,18 +15,18 @@
   "preconfiguredEntries": [{
     "groupId": "5c03119e-3074-46fd-976b-c60198311f70", // Other
     "group": { "default": "Other" },
-    "title": { "default": "GetSPListItems" },
-    "description": { "default": "This WebPart will retrieve list items form SharePoint List and display in a table" },
+    "title": { "default": "Project Dashboard" },
+    "description": { "default": "This WebPart will retrieve PROJECT list items form SharePoint List and display in a table" },
     "officeFabricIconFontName": "Page",
     "properties": {
       "publicContentTypeId": "0x0100B1140C9087A6D842A687A3FC7ACD0BBC01",
       "invitedContentTypeId": "0x0100B1140C9087A6D842A687A3FC7ACD0BBC02",
       "confidentialContentTypeId": "0x0100B1140C9087A6D842A687A3FC7ACD0BBC03",
       "titleSearchField": "Title", 
-      "descriptionSearchField": "Description1OWSTEXT", 
-      "projectLeaderSearchField": "ProjectLeaderOWSUSER", 
+      "descriptionSearchField": "ProjectDescriptionOWSTEXT", 
+      "projectLeaderSearchField": "ProjectLeader0OWSUSER", 
       "statusSearchField": "ProjectStatusOWSCHCS", 
-      "budgetSearchField": "BudgetOWSTEXT"
+      "budgetSearchField": "Budget0OWSTEXT"
     }
   }]
 }

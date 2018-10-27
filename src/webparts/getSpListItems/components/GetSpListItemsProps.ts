@@ -5,5 +5,10 @@ export interface GetSpListItemsProps {
   publicContentTypeId: string;
   confidentialContentTypeId: string;
   projectSearchFieldStrings: string[];
+  titleSearchFieldString: string;
+  projectLeaderSearchFieldString: string;
+  projectDescriptionSearchFieldString: string;
+  projectStatusSearchFieldString: string;
+  budgetSearchFieldString: string;
   webpartContext: WebPartContext;
 }

@@ -22,17 +22,19 @@ export class GetSpListItems extends React.Component<GetSpListItemsProps, GetSpLi
     this.getProjectItems();
   }
 
-  private mapResultToProject(result: any, type: ProjectType): Project {
-    const ProjectLeader: string = result.ProjectLeaderOWSUSER;
-
+  private mapResultToProject(result: any[], type: ProjectType): Project {
+    let ProjectLeader: string = result[this.props.projectLeaderSearchFieldString];
+    if(ProjectLeader) {
+      ProjectLeader = ProjectLeader.split('|')[1].trim();
+    }
     const p: Project = {
-      Title: result.Title,
-      Budget: result.BudgetOWSTEXT,
-      Description: result.Description1OWSTEXT,
-      ProjectLeader: ProjectLeader.split('|')[1].trim(),
-      Status: result.ProjectStatusOWSCHCS,
+      Title: result[this.props.titleSearchFieldString],
+      Budget: result[this.props.budgetSearchFieldString],
+      Description: result[this.props.projectDescriptionSearchFieldString],
+      ProjectLeader: ProjectLeader,
+      Status: result[this.props.projectStatusSearchFieldString],
       Type: type,
-      ListUrl: result.ParentLink
+      ListUrl: result["ParentLink"]
     };
     return p;
   }

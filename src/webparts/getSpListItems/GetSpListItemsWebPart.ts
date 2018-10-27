@@ -32,6 +32,11 @@ export default class GetSpListItemsWebPart extends BaseClientSideWebPart<IGetSpL
         publicContentTypeId: this.properties.publicContentTypeId,
         confidentialContentTypeId: this.properties.confidentialContentTypeId,
         projectSearchFieldStrings: [this.properties.titleSearchField, this.properties.projectLeaderSearchField, this.properties.descriptionSearchField, this.properties.statusSearchField, this.properties.budgetSearchField],
+        titleSearchFieldString: this.properties.titleSearchField,
+        projectLeaderSearchFieldString: this.properties.projectLeaderSearchField,
+        projectStatusSearchFieldString: this.properties.statusSearchField,
+        budgetSearchFieldString: this.properties.budgetSearchField,
+        projectDescriptionSearchFieldString: this.properties.descriptionSearchField,
         webpartContext: this.context
       }
     );

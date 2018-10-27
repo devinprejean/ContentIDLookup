@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
   "solution": {
-    "name": "content-id-lookup-client-side-solution",
-    "id": "e170fa05-128e-4b37-981a-817eb13d785f",
-    "version": "1.0.0.0",
+    "name": "Project Dashboard",
+    "id": "b51378bd-ce3c-4d8f-97e9-31b1a361c5e3",
+    "version": "1.0.2.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true
   },
   "paths": {
-    "zippedPackage": "solution/content-id-lookup.sppkg"
+    "zippedPackage": "solution/project-dashboard.sppkg"
   }
 }
